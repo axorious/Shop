@@ -27,7 +27,7 @@ app.use(express.json());
 
 app.use("/api", routes);
 
-app.get("*", (req, res) => {
+app.get(/.*/, (req, res) => {
   res.sendFile(path.resolve("..", "frontend", "dist", "index.html"));
 });
 
